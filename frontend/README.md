@@ -72,6 +72,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## tutorials and docs used for the completion of this project:
 
 https://www.youtube.com/watch?v=2KUYOdTXK74
+
 https://leafletjs.com/examples/choropleth/
 
 https://datahub.io/core/geo-countries
