@@ -73,3 +73,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 https://www.youtube.com/watch?v=2KUYOdTXK74
 https://leafletjs.com/examples/choropleth/
+
+https://datahub.io/core/geo-countries
+
+- License
+  All data is licensed under the Open Data Commons Public Domain Dedication and License.
+
+  Note that the original data from [Natural Earth](https://www.naturalearthdata.com/) is public domain. While no credit is formally required a link back or credit to [Natural Earth](https://www.naturalearthdata.com/), [Lexman](https://github.com/lexman) and the [Open Knowledge Foundation](https://okfn.org/en/) is much appreciated.
+
+  All source code is licenced under the MIT licence.
