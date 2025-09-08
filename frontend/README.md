@@ -75,6 +75,8 @@ https://www.youtube.com/watch?v=2KUYOdTXK74
 
 https://leafletjs.com/examples/choropleth/
 
+https://www.youtube.com/watch?v=D4jq5Bd9bTA&t=86s
+
 https://datahub.io/core/geo-countries
 
 - License
