@@ -2,7 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import { MapContainer, TileLayer, Polygon, GeoJSON } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 // . is up one folder, .. is up two folders
-import { statesData } from "../statesData.js";
+import { statesData } from "../data/statesData.js";
+import countryData from "../data/countryData.json";
 
 // import worldGeoJSON from "../data/countries.geojson"; // Download GeoJSON file
 
@@ -10,6 +11,7 @@ function TempMapPage() {
   const [selectedCountry, setSelectedCountry] = useState(null);
 
   //console.log(require.resolve("../statesData.js"));
+  //console.log(countryData);
 
   return (
     <div
@@ -26,6 +28,7 @@ function TempMapPage() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         />
+        <GeoJSON data={countryData.features} />
         {statesData.features.map((state) => {
           const coordinates = state.geometry.coordinates[0].map((item) => [
             item[1],
