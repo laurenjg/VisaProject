@@ -19,7 +19,7 @@ function TempMapPage() {
     return {
       fillColor: getColour(feature.properties.name),
       weight: 2,
-      opacity: 1,
+      opacity: 0.5,
       color: "white",
       fillOpacity: 0.2,
     };
@@ -42,7 +42,7 @@ function TempMapPage() {
         layer.setStyle({
           fillColor: getColour(feature.properties.name),
           weight: 2,
-          opacity: 1,
+          opacity: 0.5,
           color: "white",
           fillOpacity: 0.2,
         });
@@ -73,8 +73,8 @@ function TempMapPage() {
         style={{ height: "500px", width: "90%" }}
       >
         <TileLayer // OpenStreetMap tiles - cloud.maptiller
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          url="https://api.maptiler.com/maps/dataviz/256/{z}/{x}/{y}.png?key=rqkl51RXYqAgmuLPTELJ"
+          attribution='&copy; <a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
         />
         <GeoJSON
           data={countryData.features}

@@ -69,13 +69,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-## tutorials and docs used for the completion of this project:
+## Tutorials and docs used for the completion of this project:
 
 https://www.youtube.com/watch?v=2KUYOdTXK74
 
+https://www.youtube.com/watch?v=D4jq5Bd9bTA&t=86s
+
+## Libraries etc
+
 https://leafletjs.com/examples/choropleth/
 
-https://www.youtube.com/watch?v=D4jq5Bd9bTA&t=86s
+https://cloud.maptiler.com/maps/dataviz/ (map tiles)
 
 ### Country coordinates:
 
