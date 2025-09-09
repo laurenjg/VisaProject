@@ -77,7 +77,9 @@ https://leafletjs.com/examples/choropleth/
 
 https://www.youtube.com/watch?v=D4jq5Bd9bTA&t=86s
 
-https://datahub.io/core/geo-countries
+### Country coordinates:
+
+Using static data from https://datahub.io/core/geo-countries
 
 - License
   All data is licensed under the Open Data Commons Public Domain Dedication and License.
