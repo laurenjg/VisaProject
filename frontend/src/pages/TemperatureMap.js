@@ -4,7 +4,6 @@ import "leaflet/dist/leaflet.css";
 // . is up one folder, .. is up two folders
 import { statesData } from "../data/statesData.js";
 import countryData from "../data/countryData.json";
-import "./TemperatureMap.css";
 
 // import worldGeoJSON from "../data/countries.geojson"; // Download GeoJSON file
 
