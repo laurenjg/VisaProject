@@ -1,0 +1,9 @@
+keeping one off utility scripts separate from react code
+
+Prevents React build (npm run build) from bundling unnecessary Node-only code.
+
+Common convention: scripts/ or tools/ for preprocessing, migrations, and data generation.
+
+
+(documented running npm init -y then npm install turf)
+(in project root, run node scripts/generateCentroids.js - generated countryCentroids.json)
