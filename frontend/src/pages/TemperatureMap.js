@@ -10,6 +10,7 @@ import countryData from "../data/countryData.json";
 function TempMapPage() {
   const [selectedCountry, setSelectedCountry] = useState(null);
 
+  // change this to suit temperature
   function getColour(name) {
     return name === "France" ? "orange" : "pink";
   }
