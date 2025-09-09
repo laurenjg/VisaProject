@@ -11,26 +11,52 @@ import "./TemperatureMap.css";
 function TempMapPage() {
   const [selectedCountry, setSelectedCountry] = useState(null);
 
-  const onEachFeature = (feature, layer) => {
+  function getColour(name) {
+    return name === "France" ? "orange" : "pink";
+  }
+
+  const countryStyle = (feature) => {
+    return {
+      fillColor: getColour(feature.properties.name),
+      weight: 2,
+      opacity: 1,
+      color: "white",
+      fillOpacity: 0.2,
+    };
+  };
+
+  const onEachCountry = (feature, layer) => {
     layer.on({
       mouseover: (e) => {
         const layer = e.target;
         layer.setStyle({
+          fillColor: getColour(feature.properties.name),
           weight: 2,
-          color: "#666",
+          opacity: 1,
+          color: "white",
           fillOpacity: 0.7,
         });
       },
       mouseout: (e) => {
         const layer = e.target;
         layer.setStyle({
-          weight: 1,
-          color: "#3388ff",
+          fillColor: getColour(feature.properties.name),
+          weight: 2,
+          opacity: 1,
+          color: "white",
           fillOpacity: 0.2,
         });
       },
       click: (e) => {
         setSelectedCountry(feature.properties.name);
+        const layer = e.target;
+        layer.setStyle({
+          fillColor: getColour(feature.properties.name),
+          weight: 2,
+          opacity: 1,
+          color: "white",
+          fillOpacity: 0.7,
+        });
       },
     });
   };
@@ -50,7 +76,11 @@ function TempMapPage() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         />
-        <GeoJSON data={countryData.features} onEachFeature={onEachFeature} />
+        <GeoJSON
+          data={countryData.features}
+          style={countryStyle}
+          onEachFeature={onEachCountry}
+        />
       </MapContainer>
     </div>
   );
