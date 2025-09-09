@@ -16,47 +16,37 @@ function TempMapPage() {
   }
 
   const countryStyle = (feature) => {
+    const isSelected = feature.properties.name === selectedCountry;
+
     return {
       fillColor: getColour(feature.properties.name),
       weight: 2,
-      opacity: 0.5,
+      opacity: 1,
       color: "white",
-      fillOpacity: 0.2,
+      fillOpacity: isSelected ? 0.7 : 0.2, // stay darker if selected
     };
   };
 
   const onEachCountry = (feature, layer) => {
     layer.on({
       mouseover: (e) => {
-        const layer = e.target;
-        layer.setStyle({
-          fillColor: getColour(feature.properties.name),
-          weight: 2,
-          opacity: 1,
-          color: "white",
-          fillOpacity: 0.7,
-        });
+        if (feature.properties.name !== selectedCountry) {
+          e.target.setStyle({
+            fillColor: getColour(feature.properties.name),
+            weight: 2,
+            opacity: 1,
+            color: "white",
+            fillOpacity: 0.7,
+          });
+        }
       },
       mouseout: (e) => {
-        const layer = e.target;
-        layer.setStyle({
-          fillColor: getColour(feature.properties.name),
-          weight: 2,
-          opacity: 0.5,
-          color: "white",
-          fillOpacity: 0.2,
-        });
+        if (feature.properties.name !== selectedCountry) {
+          e.target.setStyle(countryStyle(feature)); // revert to base style
+        }
       },
-      click: (e) => {
+      click: () => {
         setSelectedCountry(feature.properties.name);
-        const layer = e.target;
-        layer.setStyle({
-          fillColor: getColour(feature.properties.name),
-          weight: 2,
-          opacity: 1,
-          color: "white",
-          fillOpacity: 0.7,
-        });
       },
     });
   };
@@ -77,6 +67,7 @@ function TempMapPage() {
           attribution='&copy; <a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
         />
         <GeoJSON
+          key={selectedCountry} // Force re-render on selectedCountry change
           data={countryData.features}
           style={countryStyle}
           onEachFeature={onEachCountry}
